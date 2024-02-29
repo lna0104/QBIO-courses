@@ -1,0 +1,3 @@
+SELECT DISTINCT SportName
+FROM Sports
+ORDER BY SportName ASC;

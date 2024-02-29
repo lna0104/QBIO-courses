@@ -1,0 +1,110 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Berger",
+                    "given": "Lee"
+                },
+                {
+                    "family": "Speare",
+                    "given": "Rick"
+                },
+                {
+                    "family": "Daszak",
+                    "given": "Peter"
+                },
+                {
+                    "family": "Green",
+                    "given": "D Earl"
+                },
+                {
+                    "family": "Cunningham",
+                    "given": "Andrew A"
+                },
+                {
+                    "family": "Goggin",
+                    "given": "C Louise"
+                },
+                {
+                    "family": "Slocombe",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Ragan",
+                    "given": "Mark A"
+                },
+                {
+                    "family": "Hyatt",
+                    "given": "Alex D"
+                },
+                {
+                    "family": "McDonald",
+                    "given": "Keith R"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Proceedings of the National Academy of Sciences",
+            "id": "berger1998chytridiomycosis",
+            "issue": "15",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "page": "9031-9036",
+            "publisher": "National Acad Sciences",
+            "title": "Chytridiomycosis causes amphibian mortality associated with population declines in the rain forests of australia and central america",
+            "type": "article-journal",
+            "volume": "95"
+        },
+        {
+            "DOI": "10.1016/j.funeco.2015.09.007",
+            "author": [
+                {
+                    "family": "Berger",
+                    "given": "Lee"
+                },
+                {
+                    "family": "Roberts",
+                    "given": "Alexandra"
+                },
+                {
+                    "family": "Voyles",
+                    "given": "Jamie"
+                },
+                {
+                    "family": "Longcore",
+                    "given": "Joyce"
+                },
+                {
+                    "family": "Murray",
+                    "given": "Kris"
+                },
+                {
+                    "family": "Skerratt",
+                    "given": "Lee"
+                }
+            ],
+            "container-title": "Fungal Ecology",
+            "id": "article",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        2
+                    ]
+                ]
+            },
+            "page": "89-99",
+            "title": "History and recent progress on chytridiomycosis in amphibians",
+            "type": "article-journal",
+            "volume": "19"
+        }
+    ],
+    "project_biblios": []
+}

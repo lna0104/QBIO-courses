@@ -1,0 +1,30 @@
+---
+title: "R_Markdown"
+output: html_document
+date: "2024-02-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 2.5 Markdown
+
+# Title
+
+## Main section
+
+### Sub-section
+
+#### Sub-sub section
+
+Hyperlinks can be made like this: [QBIOL Masters](https://future-students.uq.edu.au/study/programs/master-quantitative-biology-5716?year=2021)
+
+Latex: $$\frac{dN_{i}}{dt} = N_{i}(\frac{\mu _{max_{i}}R}{k_{i} + R} - \delta_{i} - d)$$
+
+##Code chunks
+
+```{r, echo = F}
+norm = rnorm(100, mean=0, sd =1)
+```
+

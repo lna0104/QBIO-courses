@@ -1,0 +1,109 @@
+cover<-c(0,0,48.4,7.7,0,87.0)#
+macro<-c(0,0.2,75,31.5,0.2,94.3)#
+plot(cover,macro)#
+cols <- c("black", "black", "blue", "blue", "red", "red") # Low light = black, mid = blue, control = red#
+pchs <- c(19, 15, 19, 15, 19, 15) # Road side: circle (19), canal side: square (15)#
+#
+dev.new(width=8,height=6); #
+par(mar=c(5, 5.5, 4, 2) + 0.1)#
+plot(cover, macro, xlim = c(0,100), ylim = c(0, 100),#
+     xlab = "Submersed plant coverage (%)", ylab =expression(paste("Submersed plant biomass (g DW ", m^{-2}, ")")),pch=pchs,col=cols,cex=2,cex.lab=2)#
+type <- c("202L", "219L", "204M", "218M", "203H", "217H") # Low light = black, mid = blue, #
+legend("topleft", legend = type, pch = pchs, col = cols)#
+#
+lm1<-lm(macro~cover)#
+summary(lm1)#
+#abline(lm1)#
+#
+cor(cover,macro,method="pearson")#
+cor.test(cover,macro,method="pearson")#
+#
+cor(cover,macro,method="spearman")#
+cor.test(cover,macro,method="spearman")
+cover<-c(0,0,48.4,7.7,0,87.0)#
+macro<-c(0,0.2,75,31.5,0.2,94.3)#
+cols <- c("black", "black", "blue", "blue", "red", "red") # Low light = black, mid = blue, control = red#
+pchs <- c(19, 15, 19, 15, 19, 15) # Road side: circle (19), canal side: square (15)#
+#
+dev.new(width=8,height=6); #
+par(mar=c(5, 5.5, 4, 2) + 0.1)#
+plot(cover, macro, xlim = c(0,100), ylim = c(0, 100),#
+     xlab = "Submersed plant coverage (%)", ylab =expression(paste("Submersed plant biomass (g DW ", m^{-2}, ")")),pch=pchs,col=cols,cex=2,cex.lab=2)#
+type <- c("202L", "219L", "204M", "218M", "203H", "217H") # Low light = black, mid = blue, #
+legend("topleft", legend = type, pch = pchs, col = cols)#
+#
+lm1<-lm(macro~cover)#
+summary(lm1)#
+#
+cor(cover,macro,method="spearman")#
+cor.test(cover,macro,method="spearman")
+cover<-c(0,0,48.4,7.7,0,87.0)#
+macro<-c(0,0.2,75,31.5,0.2,94.3)#
+type <- c("202L", "219L", "204M", "218M", "203H", "217H") #
+cols <- c("black", "black", "blue", "blue", "red", "red")#
+pchs <- c(19, 15, 19, 15, 19, 15)#
+#
+dev.new(width=8,height=6); #
+par(mar=c(5, 5.5, 4, 2) + 0.1)#
+plot(cover, macro, xlim = c(0,100), ylim = c(0, 100),#
+     xlab = "Submersed plant coverage (%)", ylab =expression(paste("Submersed plant biomass (g DW ", m^{-2}, ")")),pch=pchs,col=cols,cex=2,cex.lab=2)#
+legend("topleft", legend = type, pch = pchs, col = cols)#
+#
+cor(cover,macro,method="spearman")#
+cor.test(cover,macro,method="spearman")
+cover<-c(0,0,48.4,7.7,0,87.0)#
+macro<-c(0,0.2,75,31.5,0.2,94.3)#
+type <- c("202L", "219L", "204M", "218M", "203H", "217H") #
+cols <- c("black", "black", "blue", "blue", "red", "red")#
+pchs <- c(19, 15, 19, 15, 19, 15)#
+#
+dev.new(width=8,height=6); #
+par(mar=c(5, 5.5, 4, 2) + 0.1)#
+plot(cover, macro, xlim = c(0,100), ylim = c(0, 100),#
+     xlab = "Submersed macrophyte coverage (%)", ylab =expression(paste("Submersed macrophyte biomass (g DW ", m^{-2}, ")")),pch=pchs,col=cols,cex=2,cex.lab=2)#
+legend("topleft", legend = type, pch = pchs, col = cols)#
+#
+cor(cover,macro,method="spearman")#
+cor.test(cover,macro,method="spearman")
+cover<-c(0,0,48.4,7.7,0,87.0)#
+macro<-c(0,0.2,75,31.5,0.2,94.3)#
+type <- c("202L", "219L", "204M", "218M", "203H", "217H") #
+cols <- c("black", "black", "blue", "blue", "red", "red")#
+pchs <- c(19, 15, 19, 15, 19, 15)#
+#
+dev.new(width=8,height=6); #
+par(mar=c(5, 5.5, 4, 2) + 0.1)#
+plot(cover, macro, xlim = c(0,100), ylim = c(0, 100),#
+     xlab = "Submersed macrophyte coverage (%)", ylab =expression(paste("Submersed macrophyte biomass (g DW ", m^{-2}, ")")),pch=pchs,col=cols,cex=2,cex.lab=1.5)#
+legend("topleft", legend = type, pch = pchs, col = cols)#
+#
+cor(cover,macro,method="spearman")#
+cor.test(cover,macro,method="spearman")
+cover<-c(0,0,48.4,7.7,0,87.0)#
+macro<-c(0,0.2,75,31.5,0.2,94.3)#
+type <- c("202L", "219L", "204M", "218M", "203H", "217H") #
+cols <- c("black", "black", "blue", "blue", "red", "red")#
+pchs <- c(19, 15, 19, 15, 19, 15)#
+#
+dev.new(width=8,height=6); #
+par(mar=c(5, 5.5, 4, 2) + 0.1)#
+plot(cover, macro, xlim = c(0,100), ylim = c(0, 100),#
+     xlab = "Submersed macrophyte coverage (%)", ylab =expression(paste("Submersed macrophyte biomass (g DW ", m^{-2}, ")")),pch=pchs,col=cols,cex=2,cex.lab=1.7)#
+legend("topleft", legend = type, pch = pchs, col = cols)#
+#
+cor(cover,macro,method="spearman")#
+cor.test(cover,macro,method="spearman")
+cover<-c(0,0,48.4,7.7,0,87.0)#
+macro<-c(0,0.2,75,31.5,0.2,94.3)#
+type <- c("202L", "219L", "204M", "218M", "203H", "217H") #
+cols <- c("black", "black", "blue", "blue", "red", "red")#
+pchs <- c(19, 15, 19, 15, 19, 15)#
+#
+dev.new(width=8,height=6); #
+par(mar=c(5, 5.5, 4, 2) + 0.1)#
+plot(cover, macro, xlim = c(0,100), ylim = c(0, 100),#
+     xlab = "Macrophyte coverage (%)", ylab =expression(paste("Macrophyte biomass (g DW ", m^{-2}, ")")),pch=pchs,col=cols,cex=2,cex.lab=1.7)#
+legend("topleft", legend = type, pch = pchs, col = cols)#
+#
+cor(cover,macro,method="spearman")#
+cor.test(cover,macro,method="spearman")

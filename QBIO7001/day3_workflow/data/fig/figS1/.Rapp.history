@@ -1,0 +1,133 @@
+# Figure S1 in Yamamichi et al. #
+# A shady phytoplankton paradox: When phytoplankton increases under low light#
+#
+panelLabel=function(text) mtext(text,side=3,adj=0,cex=1.25,line=0.5); #
+library(akima)#
+dev.new(width=8,height=6); #
+par(mar=c(5, 6, 3, 2) + 0.1, mgp=c(3.5,1,0))#
+#par(mfrow = c(3,2), mar=c(5, 6, 3, 2) + 0.1, mgp=c(3.5,1,0))#
+col.1<-colorRampPalette(c("blue", "cyan", "green", "yellow", "orange", "red"))#
+#
+# 202L#
+dat<-read.csv("allCTD202.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="202L",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(a)");#
+#
+dat<-read.csv("allCTD219.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="219L",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(b)");#
+#
+dat<-read.csv("allCTD204.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="204M",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(c)");#
+#
+dat<-read.csv("allCTD218.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="218M",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(d)");#
+#
+dat<-read.csv("allCTD203.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="203H",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(e)");#
+#
+dat<-read.csv("allCTD217.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="217H",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(f)");
+# Figure S1 in Yamamichi et al. #
+# A shady phytoplankton paradox: When phytoplankton increases under low light#
+#
+panelLabel=function(text) mtext(text,side=3,adj=0,cex=1.25,line=0.5); #
+library(akima)#
+dev.new(width=8,height=6); #
+par(mar=c(5, 6, 3, 2) + 0.1, mgp=c(3.5,1,0))#
+#par(mfrow = c(3,2), mar=c(5, 6, 3, 2) + 0.1, mgp=c(3.5,1,0))#
+col.1<-colorRampPalette(c("blue", "cyan", "green", "yellow", "orange", "red"))#
+#
+# Fig. S1a: 202L#
+dat<-read.csv("allCTD202.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="202L",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(a)");#
+#
+# Fig. S1b: 219L#
+dat<-read.csv("allCTD219.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="219L",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(b)");#
+#
+# Fig. S1c: 204M#
+dat<-read.csv("allCTD204.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="204M",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(c)");#
+#
+# Fig. S1d: 218M#
+dat<-read.csv("allCTD218.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="218M",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(d)");#
+#
+# Fig. S1e: 203H#
+dat<-read.csv("allCTD203.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="203H",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(e)");#
+#
+# Fig. S1f: 217H#
+dat<-read.csv("allCTD217.csv",header=T)#
+dat<-na.omit(dat)#
+x<-dat$days#
+y<-dat$depth#
+z<-dat$DO.#
+interp1<-interp(x,y,z,xo=seq(min(x),max(x),length=90),yo=seq(min(y),max(y),length=30),duplicate=T)#
+filled.contour(interp1,nlevels=30,ylim=c(-1.5,0),zlim=c(50,150),color=col.1,main="217H",xlab="Days since shading",ylab="Depth (m)",cex.lab=2)#
+panelLabel("(f)");

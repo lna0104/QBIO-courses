@@ -1,0 +1,147 @@
+---
+title: "Silly RMarkdown Demo"
+author: "John Dwyer"
+date: "2023-10-09"
+output: 
+  html_document:
+    number_sections: TRUE
+    toc: true
+    toc_float: true
+    theme: united
+    highlight: tango
+bibliography: /Users/lena/Desktop/Courses/CONS7008/RMarkdown/R scripts/refs.bib
+link-citation: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+beetle_data<-read_csv("Data/beetle_data.csv")
+```
+
+# A Large Heading
+
+## A smaller heading
+
+### A bit smaller heading
+
+#### A much smaller heading
+
+This report uses the **tidyverse** package along with the *beetle_data* dataset, which has columns including:
+
+-   counts
+-   Tmax
+-   dist_to_edge
+
+You can insert line breaks like this. <br> and they should work.
+
+<br> You can define paragraphs like this:
+
+<p>
+
+This is the topic sentence of my paragraph. Now I move to my second sentence which is on topic but a bit more specific.
+
+<p/>
+
+<p>Let's start a new paragraph. This is a short one.</p>
+
+<br> If you don't like using paragraphs, you can just use line breaks and get a similar effect. <br><br>
+
+# R code
+
+You can embed an R code chunk like this:
+
+```{r}
+summary(beetle_data)
+```
+
+You can suppress the R code being printed in the HTML like this:
+
+```{r, echo=F}
+summary(beetle_data)
+```
+
+You can suppress the summary being printed in the HTML like this:
+
+```{r, eval=F}
+summary(beetle_data)
+```
+
+To include a nice grey line between sections, just use:
+
+------------------------------------------------------------------------
+
+# Including Plots
+
+You can embed plots, for example:
+
+```{r, echo=F}
+with(beetle_data, plot(counts ~ Tmax))
+```
+
+## now John is showing off
+
+You can specify the size and justification of r plots like this, as well as add a caption:
+
+```{r, echo=F, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure 1: Here is the same plot with solid salmon points."}
+with(beetle_data, plot(counts ~ Tmax, col="salmon", pch=16))
+```
+
+------------------------------------------------------------------------
+
+# Add Images
+
+<p>
+
+<center>
+
+![Figure 1. If you try and take a photo of John he will do this because he is a bogan and a juvenile](Images/Rude_John.jpg){style="width:50%"}
+
+</center>
+
+</p>
+
+<br>
+
+Add another image, this time not centered.<br>
+
+<p>
+
+![Figure 2. These flowers are ridiculous](Images/Pretty_flowers.jpeg){style="width:50%"}
+
+</p>
+
+------------------------------------------------------------------------
+
+# Add a nice table
+
+```{r, echo=FALSE}
+knitr::kable(head(beetle_data), caption = "Table 1. The first 6 rows of beetle_data")
+```
+
+------------------------------------------------------------------------
+
+# Add an equation
+
+::: {style="text-align: center; font-size: 25pt;"}
+$t = \frac{m - \mu}{s /\sqrt n}$
+:::
+
+$m$ is the sample mean;<br> $\mu$ is the "population" mean (a hypothetical value that you're testing against);<br> $s$ is the standard deviation;<br> $n$ is the sample size.
+
+------------------------------------------------------------------------
+
+# Insert a weblink
+
+One of John's fave bands is [Spoon](https://spoontheband.com/).
+
+------------------------------------------------------------------------
+
+# Citation
+
+Add citation here @R-base
+
+# References {-}
+
+<div id="refs"></div>

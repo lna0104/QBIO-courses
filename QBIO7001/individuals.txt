@@ -1,0 +1,4 @@
+individual_1 1 TRUE 10 0.01 FALSE TRUE
+individual_2 1 FALSE 5 0.04 TRUE TRUE
+individual_1 2 TRUE 14 0.2 TRUE TRUE
+individual_2 2 FALSE 9 0.08 TRUE TRUE

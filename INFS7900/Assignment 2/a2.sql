@@ -1,0 +1,4 @@
+SELECT SportID, COUNT(EventID)
+FROM Events
+WHERE Date >= '2023-07-01' AND Date <= '2023-07-31'
+GROUP BY SportID;

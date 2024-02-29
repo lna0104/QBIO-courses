@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --partition=qbiol
+#SBATCH --mem=200          # memory (MB)
+#SBATCH --time=0-0:02      # time (D-HH:MM)
+#SBATCH -o test.%N.%j.out  # STDOUT
+#SBATCH -e test.%N.%j.err  # STDERR
+
+echo Hello World! 
+
+sleep 30
+
+echo Goodnight
