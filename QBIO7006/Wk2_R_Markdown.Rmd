@@ -6,6 +6,7 @@ date: "2024-02-29"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set()
 ```
 
 ## 2.5 Markdown
@@ -22,9 +23,36 @@ Hyperlinks can be made like this: [QBIOL Masters](https://future-students.uq.edu
 
 Latex: $$\frac{dN_{i}}{dt} = N_{i}(\frac{\mu _{max_{i}}R}{k_{i} + R} - \delta_{i} - d)$$
 
-##Code chunks
+## 2.6 Code chunks
 
-```{r, echo = F}
+```{r}
 norm = rnorm(100, mean=0, sd =1)
 ```
 
+### Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(norm)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+Assigns a name to all generated plots and can also help with debugging.
+
+```{r marsupial plot}
+library(boilrdata)
+plot(Mass ~ MaxLifeSpan, data=marsupials)
+```
+
+## 2.9 Tables in R markdown
+
+```{r marsupial table}
+library(knitr)
+kable(head(marsupials))
+```
