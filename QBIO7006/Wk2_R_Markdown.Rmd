@@ -1,6 +1,6 @@
 ---
 title: "R_Markdown"
-output: html_document
+output: pdf_document
 date: "2024-02-29"
 ---
 
@@ -56,3 +56,5 @@ plot(Mass ~ MaxLifeSpan, data=marsupials)
 library(knitr)
 kable(head(marsupials))
 ```
+
+We have inline code `r pi * 3^2`

@@ -1,0 +1,128 @@
+---
+title: "R Assignment"
+output: html_document
+date: "2024-03-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(stringr)
+```
+
+## Step 1: Data import and tidying
+
+```{r, warning=FALSE}
+antsJapaneseData <- as.tibble(read_csv("~/Desktop/Courses/QBIO/QBIO7001/R_Assignment/data/ants_Japanese_islands.csv"))
+
+tidyData <- antsJapaneseData |> 
+  `colnames<-` (c("Subfamily", "Genus", "Species", "Status", "Exotic", "IslandName", 
+                 "IslandGroup", "Archipelago", "BiogeographicRealm", "Lat", "Long")) |>
+  mutate_all(~replace(., . == "-", NA)) |>
+  mutate(GenusSpecies = paste(Genus, Species, sep="_"))
+```
+
+## Step 2: Extracting information from the data
+
+1.  How many data entries are there for the subfamily Formicinae?
+
+```{r}
+nrow(tidyData[tidyData$Subfamily == "Formicinae",])  
+```
+
+2.  How many data entries are there for native species on the island of Hokkaido?
+
+```{r}
+nrow(tidyData[tidyData$IslandName == "Hokkaido" & tidyData$Exotic == "Native", ])
+```
+
+3.  What latitudinal range do the species in the data set cover?
+
+```{r}
+range(tidyData$Lat)
+```
+
+4.  How many different ant species does the data set contain?
+
+```{r}
+length(unique(tidyData$GenusSpecies))
+```
+
+5.  Which specific epithets (the second part of the scientific names) are shared by several species?
+
+```{r}
+sharedEpithet <-tidyData |> 
+  select(Species, Genus) |>
+  distinct() |>
+  group_by(Species) |>
+  summarise(n = n()) |>
+  filter(n>1)
+```
+
+## Step 3: Plotting the number of species per island
+
+Calculate number of islands for each species and exotic
+
+```{r, message=FALSE}
+nIslandsPerSpecies <- tidyData |>
+  group_by(GenusSpecies, Exotic) |>
+  summarise(nIslands = n())
+```
+
+```{r}
+ggplot(nIslandsPerSpecies) + 
+  geom_bar(aes(nIslands)) +
+  theme_bw() +
+  facet_wrap(vars(Exotic)) + 
+  labs(x= "Number of islands", y= "Number of species records")
+```
+
+## Step 4: Combining the data with geographical information
+
+Import Japanese island data:
+
+```{r}
+JapaneseIslandData <- read_csv("~/Desktop/Courses/QBIO/QBIO7001/R_Assignment/data/Japanese_islands.csv")
+```
+
+Summarise data set containing the number of reported ant species for each of the islands. Change the name of islands to match between 2 datasets:
+
+```{r}
+nSpeciesPerIsland <- tidyData |> 
+  group_by(IslandName) |>
+  summarise(nSpecies = n()) |>
+  mutate(lowerIslandName = tolower(IslandName)) |> #change to lower case
+  mutate(modIslandName = str_replace_all(lowerIslandName, "[^[:alnum:]]", "")) #remove all special characters
+```
+
+Modify the name of islands:
+
+```{r}
+modNameJapaneseIsland <- JapaneseIslandData |>
+  mutate(lowerName = tolower(Name)) |> #change to lower case
+  mutate(modIslandName = str_replace_all(lowerName, "[^[:alnum:]]", "")) #remove all special characters
+```
+
+Combine 2 datasets:
+
+```{r}
+combinedData <- nSpeciesPerIsland |>
+  inner_join(modNameJapaneseIsland, by = "modIslandName") |>
+  mutate(Density = Population/Area) |>
+  select(IslandName, modIslandName, nSpecies, Area, Population, Density)
+```
+
+## Step 5: Plotting species numbers vs. island size
+
+```{r, echo=TRUE}
+ggplot(combinedData) +
+    geom_point(aes(x= log(Area), y = nSpecies, col = Density)) +
+    theme_bw() +
+    labs(x = "log(Island area [km2])", y= "Number of recorded species", color = "Population density") +
+    scale_color_gradient(low="black", high="red")
+  
+```
